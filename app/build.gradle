@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.vison.devdemo"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+}
+
+repositories {
+    mavenCentral() // jcenter() works as well because it pulls from Maven Central
+    maven { url "https://jitpack.io" } //MPAndroidChart need
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.google.android.gms:play-services:8.1.0'
+    compile 'com.android.support:multidex:1.0.0'
+    //图片选择(可多选)及裁剪旋转
+    compile 'cn.finalteam:galleryfinal:1.4.8.7'
+    //加载图片,支持galleryfinal
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    //网络请求
+    compile 'com.zhy:okhttputils:2.4.1'
+    //json解析
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.alibaba:fastjson:1.2.10'
+    // jsoup HTML parser library @ http://jsoup.org/
+    compile 'org.jsoup:jsoup:1.9.1'
+    //lru缓存
+    compile 'com.jakewharton:disklrucache:2.0.2'
+    //加载图片
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //图片变换,裁剪,形状,颜色,与glide配合使用
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    //日志工具,可显示线程,文件名,代码所在行号
+    compile 'com.github.orhanobut:logger:1.12'
+    //smarttablayout
+    compile 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
+    //androidbootstrap
+    compile 'com.beardedhen:androidbootstrap:2.2.0'
+    //崩溃报告
+    compile 'ch.acra:acra:4.8.5'
+}

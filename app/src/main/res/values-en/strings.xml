@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MVPTest</string>
+    <string name="hello_world">hello_world</string>
+    <string name="action_settings">action_settings</string>
+    <!--LoginActivity-->
+    <string name="title_activity_login">login</string>
+    <string name="platform_name">izirong Inter industry platform</string>
+    <string name="hint_et_mobile">MobileNumber</string>
+    <string name="text_btn_login">Login</string>
+    <string name="text_btn_register">Register</string>
+    <string name="error_invalid_mobile">Please enter a number of 11 digits of the phone number</string>
+    <string name="success_send_mobile">Send SMS verification code success</string>
+    <string name="error_send_smsCode">Send SMS verification code failed</string>
+    <string name="select_image">Select Image</string>
+    <!--RegisterActivity-->
+
+    <!--MainActivity-->
+    <string name="title_activity_main">login</string>
+</resources>

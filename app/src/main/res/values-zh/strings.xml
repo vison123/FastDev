@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MVPTest</string>
+    <string name="hello_world">hello_world</string>
+    <string name="action_settings">action_settings</string>
+    <!--MainActivity-->
+    <string name="title_home">首页</string>
+    <string name="title_market">市场</string>
+    <string name="title_publish">发布</string>
+    <string name="title_im">IM</string>
+    <string name="title_mine">我的</string>
+    <!--LoginActivity-->
+    <string name="title_activity_login">登录</string>
+    <string name="platform_name">爱资融同业平台</string>
+    <string name="hint_et_mobile">手机号</string>
+    <string name="text_btn_login">登录</string>
+    <string name="text_btn_register">注册</string>
+    <string name="error_invalid_mobile">请输入11位数字的手机号码</string>
+    <string name="success_send_mobile">发送短信验证码成功</string>
+    <string name="error_send_smsCode">发送短信验证码失败</string>
+    <string name="select_image">选择图片</string>
+    <!--RegisterActivity-->
+
+</resources>

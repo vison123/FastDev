@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+    <TextView
+        android:textSize="16sp"
+        android:layout_marginRight="14dp"
+        android:layout_marginLeft="14dp"
+        android:text="确认不在平台内将此票据贴现吗？此操作将不可逆"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

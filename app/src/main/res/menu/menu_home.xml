@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.amarsoft.mvptest.activity.MainActivity">
+    <item android:id="@+id/action_edit"
+        android:title="编辑"
+        android:orderInCategory="80"
+        android:icon="@drawable/arrow_back"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_share"
+        android:title="分享"
+        android:orderInCategory="90"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_settings"
+        android:title="设置"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+</menu>

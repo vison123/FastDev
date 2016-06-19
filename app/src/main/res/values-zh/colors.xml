@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#3A3A3A</color>
+    <color name="accentColor">#4b76df</color>
+    <color name="textColorPrimary">#3A3A3A</color>
+    <color name="textColorSecondary">#4b76df</color>
+    <!-- 自定义toolbar标题颜色 -->
+    <color name="backColorOfToolBar">#3A3A3A</color>
+    <!-- 自定义toolbar标题颜色 -->
+    <color name="titleColorOfToolBar">#ffffff</color>
+</resources>
