@@ -47,8 +47,6 @@ public class BaseApplication extends Application{
     private static MediaType parse;
     private static OkHttpClient mClient;
     private static boolean useThemeBlack = true;
-    private static ImageLoader imageLoader;
-    private static DisplayImageOptions options;
 
 
     @Override
@@ -63,7 +61,6 @@ public class BaseApplication extends Application{
         TypefaceProvider.registerDefaultIconSets();
         //崩溃报告
         ACRA.init(this);
-        initGallery();
     }
 
     public static Context getContext() {
@@ -76,51 +73,6 @@ public class BaseApplication extends Application{
 
     public static MediaType getParse() {
         return parse;
-    }
-
-    private void initGallery() {
-        //设置主题
-        ThemeConfig theme = new ThemeConfig.Builder()
-                .setTitleBarBgColor(Color.rgb(68, 188, 178))
-                .build();
-        //配置功能
-        FunctionConfig functionConfig = new FunctionConfig.Builder()
-                .setEnableCamera(true)
-                .setEnableEdit(true)
-                .setEnableCrop(true)
-                .setEnableRotate(true)
-                .setCropSquare(true)
-                .setEnablePreview(true)
-                .setMutiSelectMaxSize(8)
-                .build();
-
-        //配置imageloader
-        cn.finalteam.galleryfinal.ImageLoader imageLoader = new UILImageLoader();
-        CoreConfig coreConfig = new CoreConfig.Builder(context, imageLoader, theme)
-                .setFunctionConfig(functionConfig)
-                .setNoAnimcation(false)
-                .build();
-        GalleryFinal.init(coreConfig);
-    }
-
-    //初始化Imageloader配置
-    private void initImageLoader() {
-        imageLoader = ImageLoader.getInstance();
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .threadPoolSize(3)
-                .defaultDisplayImageOptions(getDisplayOptions())
-                .memoryCache(new WeakMemoryCache())
-                .build();
-        imageLoader.init(config);
-    }
-
-    //加载图片的配置
-    private DisplayImageOptions getDisplayOptions() {
-        DisplayImageOptions options = new DisplayImageOptions.Builder()
-                .bitmapConfig(Bitmap.Config.RGB_565)
-                .imageScaleType(ImageScaleType.IN_SAMPLE_INT)
-                .build();
-        return options;
     }
 
 }

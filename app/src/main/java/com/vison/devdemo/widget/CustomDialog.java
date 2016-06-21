@@ -100,7 +100,7 @@ public class CustomDialog extends Dialog {
                     ViewGroup.LayoutParams.WRAP_CONTENT));
             //设置标题
             ((TextView) view.findViewById(R.id.tv_title)).setText(title);
-            //设置提交按钮
+            //设置确认按钮
             if (positivieButtonText != null) {
                 ((TextView) view.findViewById(R.id.tv_go)).setText(positivieButtonText);
                 if (positiveButtonOnclickListener != null) {
@@ -113,6 +113,7 @@ public class CustomDialog extends Dialog {
                 }
             } else {
                 view.findViewById(R.id.tv_go).setVisibility(View.GONE);
+                view.findViewById(R.id.line_center).setVisibility(View.GONE);
             }
 
             //设置取消按钮
@@ -128,6 +129,7 @@ public class CustomDialog extends Dialog {
 //                }
             } else {
                 view.findViewById(R.id.tv_cancel).setVisibility(View.GONE);
+                view.findViewById(R.id.line_center).setVisibility(View.GONE);
             }
 
             //设置中间内容

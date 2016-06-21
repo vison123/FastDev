@@ -39,12 +39,23 @@
             android:layout_marginTop="20dp"
             android:maxLength="11"
             android:inputType="phone"
+            android:textColor="@color/textColorPrimary"
             android:hint="@string/hint_et_mobile" />
+
+        <com.vison.devdemo.widget.MyEditText
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/et_mobileNo"
+            android:layout_marginTop="20dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:background="#00000000" />
+
 
         <Button
             android:id="@+id/btn_login"
             android:layout_below="@+id/et_mobileNo"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="80dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="@string/text_btn_login" />

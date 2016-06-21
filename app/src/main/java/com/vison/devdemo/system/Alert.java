@@ -16,8 +16,8 @@ import com.vison.devdemo.widget.CustomDialog;
  */
 public class Alert {
     public static void showOKDialog(String title, String message,Context context){
-        CustomDialog.Builder builder1 = new CustomDialog.Builder(context);
-        CustomDialog dialog = builder1.setTitle(title)
+        CustomDialog.Builder builder = new CustomDialog.Builder(context);
+        CustomDialog dialog = builder.setTitle(title)
                 .setContentView(View.inflate(context, R.layout.dialog_content, null))
                 .setMessage(message)
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {

@@ -27,7 +27,7 @@
             android:id="@+id/tv_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="你确定要贴现？"
+            android:text="你确定要退出"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:textColor="#7f7f7f"
@@ -50,10 +50,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="取消"
-            android:textColor="#ff5b58"
+            android:textColor="#3A3A3A"
             android:textSize="20sp" />
 
         <View
+            android:id="@+id/line_center"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="#b6b6b6" />
@@ -65,7 +66,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="贴现"
-            android:textColor="#44bcb2"
+            android:textColor="#3A3A3A"
             android:textSize="20sp" />
     </LinearLayout>
 </LinearLayout>

@@ -35,21 +35,21 @@
         <activity
             android:name=".biz.LoginAndRegister.activity.LoginActivity"
             android:configChanges="locale">
-        </activity>
-        <activity
-            android:name=".system.MainActivity"
-            android:configChanges="locale">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
+            android:name=".system.MainActivity"
+            android:configChanges="locale"></activity>
+        <activity
             android:name=".biz.LoginAndRegister.activity.RegisterActivity"
             android:configChanges="locale" />
         <activity
             android:name=".biz.LoginAndRegister.activity.LoginSmsActivity"
-            android:configChanges="locale" />
+            android:configChanges="locale"></activity>
+
         <activity
             android:name=".biz.LoginAndRegister.activity.RegisterSmsActivity"
             android:configChanges="locale" />
