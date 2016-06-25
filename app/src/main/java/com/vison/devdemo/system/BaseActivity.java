@@ -51,7 +51,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         setContentView();
         ButterKnife.bind(this);
         initView();
-        initToolbar();
         initData();
         initImageLoader();
         initGallery();
@@ -67,9 +66,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
     //初始化数据
     public abstract void initView();
-
-    //初始化toolbar
-    public abstract void initToolbar();
 
     //初始化数据
     public abstract void initData();

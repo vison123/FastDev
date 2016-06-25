@@ -23,11 +23,6 @@ public class RegisterSmsActivity extends BaseActivity {
     }
 
     @Override
-    public void initToolbar() {
-
-    }
-
-    @Override
     public void initData() {
 
     }

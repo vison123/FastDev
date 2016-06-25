@@ -23,10 +23,6 @@ public class LoginSmsActivity extends BaseActivity implements LoginSmsContract.V
 
     }
 
-    @Override
-    public void initToolbar() {
-
-    }
 
     @Override
     public void initData() {

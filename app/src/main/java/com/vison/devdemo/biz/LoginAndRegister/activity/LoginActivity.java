@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,12 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.vison.devdemo.R;
 import com.vison.devdemo.biz.LoginAndRegister.contract.LoginContract;
 import com.vison.devdemo.biz.LoginAndRegister.presenter.LoginPresenter;
 import com.vison.devdemo.system.Alert;
-import com.vison.devdemo.system.BaseActivity;
+import com.vison.devdemo.system.ToolBarBaseActivity;
 import com.vison.devdemo.utils.PatternUtils;
 
 import java.util.List;
@@ -27,11 +27,8 @@ import cn.finalteam.galleryfinal.GalleryFinal;
 import cn.finalteam.galleryfinal.model.PhotoInfo;
 
 
-public class LoginActivity extends BaseActivity implements LoginContract.View {
+public class LoginActivity extends ToolBarBaseActivity implements LoginContract.View {
 
-
-    @BindView(R.id.toolbar_title)
-    TextView toolbarTitle;
     @BindView(R.id.logo)
     ImageView logo;
     @BindView(R.id.tv_platform)
@@ -44,20 +41,20 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     Button btnRegister;
 
     private LoginContract.Presenter mPresenter;
-    private static ImageLoader imageLoader;
     private final FunctionConfig functionConfig = new FunctionConfig.Builder().build();
     private final int REQUEST_CODE_CAMERA = 1000;
     private final int REQUEST_CODE_GALLERY = 1001;
     private final int REQUEST_CODE_CROP = 1002;
 
     @Override
-    public void initParams() {
-        mPresenter = new LoginPresenter(this);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
     }
 
     @Override
-    public void setContentView() {
-        setContentView(R.layout.activity_login);
+    public void initPresenter() {
+        mPresenter = new LoginPresenter(this);
     }
 
     @Override
@@ -66,8 +63,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     }
 
     @Override
-    public void initToolbar() {
-        toolbarTitle.setText(R.string.title_activity_login);
+    public void initToolbar(Toolbar toolbar,TextView toolBarTitle) {
+        toolBarTitle.setText("login");
+        toolbar.setTitle("");
+        toolbar.setNavigationIcon(R.drawable.ic_return);
+        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -169,9 +169,4 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
             Toast.makeText(LoginActivity.this, errorMsg, Toast.LENGTH_SHORT).show();
         }
     };
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 }

@@ -3,13 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".biz.LoginAndRegister.LoginActivity">
-    <include
-        android:id="@+id/topbar_login"
-        layout="@layout/layout_toolbar_no_return"/>
 
-    <RelativeLayout android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/topbar_login"
         android:paddingLeft="16dp"
         android:paddingRight="16dp">
 
@@ -17,19 +14,19 @@
             android:id="@+id/logo"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_logo"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"/>
+            android:src="@drawable/ic_logo" />
 
         <TextView
             android:id="@+id/tv_platform"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_below="@id/logo"
-            android:textSize="18dp"
-            android:text="@string/platform_name"/>
+            android:text="@string/platform_name"
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/et_mobileNo"
@@ -37,38 +34,27 @@
             android:layout_height="50dp"
             android:layout_below="@id/tv_platform"
             android:layout_marginTop="20dp"
-            android:maxLength="11"
+            android:hint="@string/hint_et_mobile"
             android:inputType="phone"
-            android:textColor="@color/textColorPrimary"
-            android:hint="@string/hint_et_mobile" />
-
-        <com.vison.devdemo.widget.MyEditText
-            android:layout_width="110dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/et_mobileNo"
-            android:layout_marginTop="20dp"
-            android:focusable="true"
-            android:gravity="center"
-            android:background="#00000000" />
-
+            android:maxLength="11"
+            android:textColor="@color/textColorPrimary" />
 
         <Button
             android:id="@+id/btn_login"
-            android:layout_below="@+id/et_mobileNo"
-            android:layout_marginTop="80dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_below="@+id/et_mobileNo"
+            android:layout_marginTop="20dp"
             android:text="@string/text_btn_login" />
 
         <Button
             android:id="@+id/btn_register"
-            android:layout_below="@+id/btn_login"
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="20dp"
             android:text="@string/text_btn_register" />
     </RelativeLayout>
-
 
 
 </RelativeLayout>

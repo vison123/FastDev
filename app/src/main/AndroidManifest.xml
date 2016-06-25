@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.vison.devdemo">
 
-
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!--
@@ -18,41 +17,54 @@
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--update app language-->
+    <!-- update app language -->
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
 
     <application
+        android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppBaseTheme"
-        android:name="android.support.multidex.MultiDexApplication">
+        android:theme="@style/AppBaseTheme">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".biz.LoginAndRegister.activity.LoginActivity"
+            android:name=".system.MainActivity"
             android:configChanges="locale">
+        </activity>
+
+        <activity
+            android:name=".system.SplashActivity"
+            android:configChanges="locale" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".system.MainActivity"
-            android:configChanges="locale"></activity>
+            android:name=".system.GuideActivity"
+            android:configChanges="locale" />
+
+        <activity
+            android:name=".biz.LoginAndRegister.activity.LoginActivity"
+            android:configChanges="locale" />
         <activity
             android:name=".biz.LoginAndRegister.activity.RegisterActivity"
             android:configChanges="locale" />
         <activity
             android:name=".biz.LoginAndRegister.activity.LoginSmsActivity"
-            android:configChanges="locale"></activity>
-
+            android:configChanges="locale" />
         <activity
             android:name=".biz.LoginAndRegister.activity.RegisterSmsActivity"
             android:configChanges="locale" />
+        <activity
+            android:name=".test.ToolBarTestActivity"
+            android:configChanges="locale" />
+
 
     </application>
 

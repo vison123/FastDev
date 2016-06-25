@@ -5,7 +5,7 @@
     <item android:id="@+id/action_edit"
         android:title="编辑"
         android:orderInCategory="80"
-        android:icon="@drawable/arrow_back"
+        android:icon="@drawable/ic_add"
         app:showAsAction="ifRoom" />
 
     <item android:id="@+id/action_share"

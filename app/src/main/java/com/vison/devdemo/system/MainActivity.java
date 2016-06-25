@@ -20,6 +20,7 @@ import com.vison.devdemo.biz.im.ImFragment;
 import com.vison.devdemo.biz.market.MarketFragment;
 import com.vison.devdemo.biz.mine.MineFragment;
 import com.vison.devdemo.biz.publish.PublishFragment;
+import com.vison.devdemo.widget.MyToast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +29,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
-    public boolean isExit = false;
+
     @BindView(R.id.toolbar_title)
     TextView toolbarTitle;
     @BindView(R.id.vp_main)
@@ -46,6 +47,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.rg_tabs)
     RadioGroup rgTabs;
     private List<Fragment> fragmentList;
+    public boolean isExit = false;
 
     @Override
     public void initParams() {
@@ -59,17 +61,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
-    }
-
-    @Override
-    public void initToolbar() {
-
+        rbHome.setChecked(true);
+        toolbarTitle.setText(getResources().getText(R.string.title_home));
     }
 
     @Override
     public void initData() {
-        toolbarTitle.setText(getResources().getText(R.string.title_home));
         fragmentList = new ArrayList();
         fragmentList.add(new HomeFragment());
         fragmentList.add(new MarketFragment());
@@ -108,14 +105,17 @@ public class MainActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_home:
+                        MyToast.logoShow(MainActivity.this, getResources().getText(R.string.title_home).toString());
                         vpMain.setCurrentItem(0);
                         toolbarTitle.setText(getResources().getText(R.string.title_home));
                         break;
                     case R.id.rb_market:
+                        MyToast.show(MainActivity.this, getResources().getText(R.string.title_market).toString());
                         vpMain.setCurrentItem(1);
                         toolbarTitle.setText(getResources().getText(R.string.title_market));
                         break;
                     case R.id.rb_publish:
+                        MyToast.bitmapShow(MainActivity.this, getResources().getText(R.string.title_home).toString(),R.drawable.ic_logo);
                         vpMain.setCurrentItem(2);
                         toolbarTitle.setText(getResources().getText(R.string.title_publish));
                         break;
@@ -161,7 +161,6 @@ public class MainActivity extends BaseActivity {
                         toolbarTitle.setText(getResources().getText(R.string.title_mine));
                         break;
                 }
-
             }
 
             @Override

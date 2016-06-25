@@ -4,59 +4,63 @@
     android:layout_height="match_parent"
     tools:context="com.amarsoft.mvptest.activity.MainActivity">
 
-   <include
-       android:id="@+id/toolbar_main"
-       layout="@layout/layout_toolbar_no_return"/>
+    <include
+        android:id="@+id/toolbar_main"
+        layout="@layout/layout_toolbar_no_return" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_main"
+        android:layout_above="@+id/border_top"/>
+
+    <View
+        android:id="@+id/border_top"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
         android:layout_above="@+id/rg_tabs"
-        android:layout_below="@+id/toolbar_main"/>
+        android:background="@color/borderColorPrimary" />
 
     <RadioGroup
         android:id="@+id/rg_tabs"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/shape_radio_group"
-        android:orientation="horizontal">
+        style="@style/main_radio_group"
+        android:background="@drawable/shape_radio_group">
 
         <RadioButton
             android:id="@+id/rb_home"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_home"
             android:text="首页"
-            android:textColor="@drawable/selector_rb_text"/>
+            android:textColor="@drawable/selector_rb_text" />
 
         <RadioButton
             android:id="@+id/rb_market"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_market"
             android:text="市场"
-            android:textColor="@drawable/selector_rb_text"/>
+            android:textColor="@drawable/selector_rb_text" />
 
         <RadioButton
             android:id="@+id/rb_publish"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_publish"
             android:text="发布"
-            android:textColor="@drawable/selector_rb_text"/>
+            android:textColor="@drawable/selector_rb_text"  />
 
         <RadioButton
             android:id="@+id/rb_im"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_im"
             android:text="IM"
-            android:textColor="@drawable/selector_rb_text"/>
+            android:textColor="@drawable/selector_rb_text" />
 
         <RadioButton
             android:id="@+id/rb_mine"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_mine"
             android:text="我的"
-            android:textColor="@drawable/selector_rb_text"/>
+            android:textColor="@drawable/selector_rb_text" />
 
     </RadioGroup>
 

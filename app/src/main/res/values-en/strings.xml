@@ -15,5 +15,5 @@
     <!--RegisterActivity-->
 
     <!--MainActivity-->
-    <string name="title_activity_main">login</string>
+    <string name="title_activity_main">Main</string>
 </resources>
