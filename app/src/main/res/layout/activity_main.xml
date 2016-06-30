@@ -24,43 +24,37 @@
 
     <RadioGroup
         android:id="@+id/rg_tabs"
-        style="@style/main_radio_group"
-        android:background="@drawable/shape_radio_group">
+        style="@style/main_radio_group">
 
         <RadioButton
             android:id="@+id/rb_home"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_home"
-            android:text="首页"
-            android:textColor="@drawable/selector_rb_text" />
+            android:text="首页"/>
 
         <RadioButton
             android:id="@+id/rb_market"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_market"
-            android:text="市场"
-            android:textColor="@drawable/selector_rb_text" />
+            android:text="市场" />
 
         <RadioButton
             android:id="@+id/rb_publish"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_publish"
-            android:text="发布"
-            android:textColor="@drawable/selector_rb_text"  />
+            android:text="发布"/>
 
         <RadioButton
             android:id="@+id/rb_im"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_im"
-            android:text="IM"
-            android:textColor="@drawable/selector_rb_text" />
+            android:text="IM"/>
 
         <RadioButton
             android:id="@+id/rb_mine"
             style="@style/main_radio_button"
             android:drawableTop="@drawable/selector_rb_mine"
-            android:text="我的"
-            android:textColor="@drawable/selector_rb_text" />
+            android:text="我的"/>
 
     </RadioGroup>
 

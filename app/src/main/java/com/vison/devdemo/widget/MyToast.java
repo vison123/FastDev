@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vison.devdemo.R;
+import com.vison.devdemo.system.BaseApplication;
 
 /**
  * Created by vison on 16/6/25.
@@ -20,13 +21,13 @@ public class MyToast {
     private static View mLayout;
     private static TextView mText;
     private static ImageView mImageView;
+    private static Context context = BaseApplication.getContext();
     /**
      * 显示Toast
-     * @param context
      * @param tvString
      */
 
-    public static void logoShow(Context context,String tvString){
+    public static void logoShow(String tvString){
         mLayout = LayoutInflater.from(context).inflate(R.layout.layout_toast,null);
         mText = (TextView) mLayout.findViewById(R.id.tv_toast);
         mImageView = (ImageView) mLayout.findViewById(R.id.iv_toast);
@@ -39,7 +40,7 @@ public class MyToast {
         toast.show();
     }
 
-    public static void bitmapShow(Context context,String tvString,int bitmapId){
+    public static void bitmapShow(String tvString,int bitmapId){
         mLayout = LayoutInflater.from(context).inflate(R.layout.layout_toast,null);
         mText = (TextView) mLayout.findViewById(R.id.tv_toast);
         mImageView = (ImageView) mLayout.findViewById(R.id.iv_toast);
@@ -52,7 +53,7 @@ public class MyToast {
         toast.show();
     }
 
-    public static void show(Context context,String tvString){
+    public static void show(String tvString){
         mLayout = LayoutInflater.from(context).inflate(R.layout.layout_toast,null);
         mText = (TextView) mLayout.findViewById(R.id.tv_toast);
         mImageView = (ImageView) mLayout.findViewById(R.id.iv_toast);

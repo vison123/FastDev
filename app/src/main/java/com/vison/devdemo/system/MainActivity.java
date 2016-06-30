@@ -20,13 +20,11 @@ import com.vison.devdemo.biz.im.ImFragment;
 import com.vison.devdemo.biz.market.MarketFragment;
 import com.vison.devdemo.biz.mine.MineFragment;
 import com.vison.devdemo.biz.publish.PublishFragment;
-import com.vison.devdemo.widget.MyToast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
 
@@ -48,6 +46,11 @@ public class MainActivity extends BaseActivity {
     RadioGroup rgTabs;
     private List<Fragment> fragmentList;
     public boolean isExit = false;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public void initParams() {
@@ -76,11 +79,6 @@ public class MainActivity extends BaseActivity {
         vpMain.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager()));
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     class MainViewPagerAdapter extends FragmentStatePagerAdapter {
 
         public MainViewPagerAdapter(FragmentManager fm) {
@@ -105,17 +103,14 @@ public class MainActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_home:
-                        MyToast.logoShow(MainActivity.this, getResources().getText(R.string.title_home).toString());
                         vpMain.setCurrentItem(0);
                         toolbarTitle.setText(getResources().getText(R.string.title_home));
                         break;
                     case R.id.rb_market:
-                        MyToast.show(MainActivity.this, getResources().getText(R.string.title_market).toString());
                         vpMain.setCurrentItem(1);
                         toolbarTitle.setText(getResources().getText(R.string.title_market));
                         break;
                     case R.id.rb_publish:
-                        MyToast.bitmapShow(MainActivity.this, getResources().getText(R.string.title_home).toString(),R.drawable.ic_logo);
                         vpMain.setCurrentItem(2);
                         toolbarTitle.setText(getResources().getText(R.string.title_publish));
                         break;

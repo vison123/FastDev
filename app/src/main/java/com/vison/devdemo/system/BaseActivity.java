@@ -39,6 +39,8 @@ import cn.finalteam.galleryfinal.ThemeConfig;
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     private static ImageLoader imageLoader;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +59,11 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         initListeners();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AppManager.getAppManager().finishActivity(this);
+    }
 
     // 绑定Presenter
     public abstract void initParams();
@@ -81,12 +88,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     //处理点击事件
     public abstract void setClick(View view);
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        AppManager.getAppManager().finishActivity(this);
-    }
-
     private boolean isZh() {
         Locale locale = getResources().getConfiguration().locale;
         String language = locale.getLanguage();
@@ -96,15 +97,15 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             return false;
     }
 
-    public void setLanguage(){
+    public void setLanguage() {
         Locale locale = getResources().getConfiguration().locale;
         String systemLanguage = locale.getLanguage();
         Configuration config = getResources().getConfiguration();
         Resources resources = getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
-        if(systemLanguage.equals("zh")){
+        if (systemLanguage.equals("zh")) {
             config.locale = Locale.CHINA;
-        }else{
+        } else {
             config.locale = Locale.ENGLISH;
         }
         resources.updateConfiguration(config, displayMetrics);
@@ -154,4 +155,5 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
                 .build();
         return options;
     }
+
 }
