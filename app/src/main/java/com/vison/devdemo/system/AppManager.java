@@ -117,7 +117,7 @@ public class AppManager {
     /**
      * 应用程序退出
      */
-    public void AppExit(Context context) {
+    public void appExit(Context context) {
         try {
             finishAllActivity();
             ActivityManager activityMgr = (ActivityManager) context

@@ -10,7 +10,10 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
+import com.orhanobut.logger.Logger;
 import com.vison.devdemo.R;
+import com.vison.devdemo.database.DBManager;
+import com.vison.devdemo.model.LoginUser;
 
 import org.acra.prefs.PrefUtils;
 
@@ -22,7 +25,11 @@ public class SplashActivity extends BaseActivity {
 
     @BindView(R.id.iv_splash)
     ImageView ivSplash;
-    AnimationSet set;
+    private AnimationSet set;
+    private static final String DB_NAME = "fas_dev.db";
+    private static final int DB_VERSION = 1;
+    private DBManager dbManager;
+
     @Override
     public void initParams() {
 
@@ -52,7 +59,7 @@ public class SplashActivity extends BaseActivity {
 //        scale.setFillAfter(true);//保持动画状态
 
         //渐变动画
-        AlphaAnimation alpna=new AlphaAnimation(1, 1);
+        AlphaAnimation alpna = new AlphaAnimation(1, 1);
         alpna.setDuration(1000);//设置动画时间
         alpna.setFillAfter(true);//保持动画状态
 
@@ -90,13 +97,15 @@ public class SplashActivity extends BaseActivity {
     }
 
     //跳转至下一个页面
-    private void toPage(){
+    private void toPage() {
+        dbManager = new DBManager(this, DB_NAME, DB_VERSION, LoginUser.class);
+        Logger.d("dbManager creat");
 //        boolean userGuide= PrefUtils.getBoolean(this, "is_user_guide_showed", false);
 //        System.out.println("userGuide" + userGuide);
 //        if(!userGuide){
 //            startActivity(new Intent(SplashActivity.this,GuideActivity.class));
 //        }else{
-            startActivity(new Intent(SplashActivity.this,MainActivity.class));
+        startActivity(new Intent(SplashActivity.this, MainActivity.class));
 //        }
 //        finish();
     }

@@ -4,9 +4,9 @@ package com.vison.devdemo.api;
  * Created by vison on 16/5/6.
  */
 public class Config {
-    public static String HOST = "http://114.55.16.46:80";
-    public static String IMHOST = "114.55.16.46:3000";
-//    Dev: true, // Switch for log. true means print.
+    public static  String HOST = "http://114.55.16.46:80";
+    public static  String IMHOST = "114.55.16.46:3000";
+
 //    Host: 'http://114.55.16.46:80',
 //    ImHost: '114.55.16.46:3000',
 //    //ImgHost: 'http://img.izirong.com/'

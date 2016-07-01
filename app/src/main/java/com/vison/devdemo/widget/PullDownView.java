@@ -357,6 +357,9 @@ public class PullDownView extends LinearLayout implements ScrollOverListView.OnS
                     mFooterTextView.setText("更多");
                     mFooterLoadingView.setVisibility(View.GONE);
                 }
+
+                default:
+                    break;
             }
         }
 

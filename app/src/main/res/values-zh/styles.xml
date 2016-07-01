@@ -39,6 +39,7 @@
         <item name="android:layout_width">match_parent</item>
     </style>
 
+    <!-- MainActivity radiobutton-->
     <style name="main_radio_button" parent="android:style/Theme.Dialog">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -50,6 +51,8 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@drawable/selector_rb_text</item>
     </style>
+
+    <!-- MainActivity radiobuttongroup -->
     <style name="main_radio_group" parent="android:style/Theme.Dialog">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>

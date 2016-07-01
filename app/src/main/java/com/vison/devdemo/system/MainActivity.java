@@ -48,11 +48,6 @@ public class MainActivity extends BaseActivity {
     public boolean isExit = false;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public void initParams() {
 
     }
@@ -77,23 +72,6 @@ public class MainActivity extends BaseActivity {
         fragmentList.add(new ImFragment());
         fragmentList.add(new MineFragment());
         vpMain.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager()));
-    }
-
-    class MainViewPagerAdapter extends FragmentStatePagerAdapter {
-
-        public MainViewPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            return fragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return fragmentList.size();
-        }
     }
 
     @Override
@@ -121,6 +99,8 @@ public class MainActivity extends BaseActivity {
                     case R.id.rb_mine:
                         vpMain.setCurrentItem(4);
                         toolbarTitle.setText(getResources().getText(R.string.title_mine));
+                        break;
+                    default:
                         break;
                 }
             }
@@ -155,6 +135,8 @@ public class MainActivity extends BaseActivity {
                         rbMine.setChecked(true);
                         toolbarTitle.setText(getResources().getText(R.string.title_mine));
                         break;
+                    default:
+                        break;
                 }
             }
 
@@ -188,5 +170,23 @@ public class MainActivity extends BaseActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+
+    class MainViewPagerAdapter extends FragmentStatePagerAdapter {
+
+        public MainViewPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fragmentList.size();
+        }
     }
 }

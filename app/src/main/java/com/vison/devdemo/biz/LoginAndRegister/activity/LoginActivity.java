@@ -41,10 +41,10 @@ public class LoginActivity extends ToolBarBaseActivity implements LoginContract.
     Button btnRegister;
 
     private LoginContract.Presenter mPresenter;
-    private final FunctionConfig functionConfig = new FunctionConfig.Builder().build();
-    private final int REQUEST_CODE_CAMERA = 1000;
-    private final int REQUEST_CODE_GALLERY = 1001;
-    private final int REQUEST_CODE_CROP = 1002;
+    private  FunctionConfig functionConfig = new FunctionConfig.Builder().build();
+    private  final int REQUEST_CODE_CAMERA = 1000;
+    private  final int REQUEST_CODE_GALLERY = 1001;
+    private  final int REQUEST_CODE_CROP = 1002;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,6 +94,8 @@ public class LoginActivity extends ToolBarBaseActivity implements LoginContract.
             case R.id.btn_register:
                 showSelectDdialog();
                 //startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            default:
+                break;
         }
     }
 
@@ -130,6 +132,8 @@ public class LoginActivity extends ToolBarBaseActivity implements LoginContract.
                                 break;
                             case 1:
                                 GalleryFinal.openCamera(REQUEST_CODE_CAMERA, functionConfig, mOnHanlderResultCallback);
+                                break;
+                            default:
                                 break;
                         }
                     }

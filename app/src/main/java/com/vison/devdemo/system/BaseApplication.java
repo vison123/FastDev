@@ -2,33 +2,18 @@ package com.vison.devdemo.system;
 
 import android.app.Application;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Handler;
 
 import com.beardedhen.androidbootstrap.TypefaceProvider;
-import com.vison.devdemo.BuildConfig;
-import com.vison.devdemo.R;
+import com.orhanobut.logger.Logger;
 import com.vison.devdemo.utils.CrashHandler;
-import com.vison.devdemo.utils.UILImageLoader;
-import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
-import com.vison.devdemo.widget.MyToast;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import org.acra.ACRA;
 import org.acra.annotation.ReportsCrashes;
 
 import java.util.Stack;
-import java.util.concurrent.TimeUnit;
 
-import cn.finalteam.galleryfinal.CoreConfig;
-import cn.finalteam.galleryfinal.FunctionConfig;
-import cn.finalteam.galleryfinal.GalleryFinal;
-import cn.finalteam.galleryfinal.ThemeConfig;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 
@@ -53,6 +38,7 @@ public class BaseApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        Logger.d("Application Creat");
         context = getApplicationContext();
         mainTid = android.os.Process.myTid();
         handler = new Handler();

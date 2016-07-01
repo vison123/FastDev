@@ -628,6 +628,7 @@ public class ImageUtils {
                     in.close();
                 }
             } catch (IOException e) {
+                return null;
             }
         }
     }

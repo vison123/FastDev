@@ -37,6 +37,7 @@ import cn.finalteam.galleryfinal.ThemeConfig;
 /**
  * Created by vison on 16/5/8.
  */
+
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     private static ImageLoader imageLoader;
 
