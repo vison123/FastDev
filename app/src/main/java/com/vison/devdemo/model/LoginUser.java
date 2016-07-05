@@ -1,6 +1,7 @@
 package com.vison.devdemo.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 /**
  * Created by vison on 16/6/30.

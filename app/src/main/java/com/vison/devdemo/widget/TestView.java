@@ -6,6 +6,8 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
 /**
  * Created by vison on 16/5/22.
@@ -87,4 +89,16 @@ public class TestView extends View implements GestureDetector.OnGestureListener,
     public boolean onDoubleTapEvent(MotionEvent e) {
         return false;
     }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+    }
+
+    RelativeLayout
 }
