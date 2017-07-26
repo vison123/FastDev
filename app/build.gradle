@@ -45,6 +45,8 @@ dependencies {
     compile 'cn.finalteam:galleryfinal:1.4.8.7'
     //加载图片,支持galleryfinal
     compile files('libs/universal-image-loader-1.9.5.jar')
+    // 统计图表
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     //网络请求
     compile 'com.zhy:okhttputils:2.4.1'
     //json解析
