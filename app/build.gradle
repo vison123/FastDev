@@ -47,6 +47,8 @@ dependencies {
     compile files('libs/universal-image-loader-1.9.5.jar')
     // 统计图表
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    // Activity路由
+    compile 'com.github.mzule.activityrouter:activityrouter:1.2.2'
     //网络请求
     compile 'com.zhy:okhttputils:2.4.1'
     //json解析
